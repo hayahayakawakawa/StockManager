@@ -14,7 +14,13 @@ $(document).ready(function() {
         $("#overlay").hide();
         $("#openModal").show();
     });
-})
+});
+
+$(function() {
+	$('.addForm').on('change', function() {
+		validationCheck();
+	});
+});
 
 function validationCheck() {
 	var name = document.getElementById('name').value;
@@ -24,7 +30,10 @@ function validationCheck() {
 	var expirationDays = document.getElementById('expirationDays').value;
 	
 	if (name === '' || category === '' || pics === '' || registDate === '' || expirationDays === '') {
-		document.getElementById('addButton').disabled = true;
 		$("#addButton").addClass('null-form');
+		document.getElementById('addButton').disabled = true;
+	} else {
+		$("#addButton").removeClass('null-form');
+		document.getElementById('addButton').disabled = false;
 	}
 }
