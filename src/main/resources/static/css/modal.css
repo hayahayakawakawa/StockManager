@@ -1,3 +1,7 @@
+input {
+	-webkit-appearance: none;
+}
+
 /* +ボタン */
 #openModal {
     position: fixed;
@@ -11,6 +15,7 @@
     background-color: #3498db;
     color: #fff;
     cursor: pointer;
+    z-index: 2;
 }
 
 #openModal:hover {
@@ -26,7 +31,10 @@
     transform: translate(-50%, -50%);
     width: 80%;
     height: 80%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #fafafa;
+    font-size: 33px;
+    border-radius: 20px;
+    z-index: 2;
 }
 
 /* ✗ボタン */
@@ -36,4 +44,46 @@
     right: 30px;
     font-size: 60px;
     cursor: pointer;
+    z-index: 2;
+}
+
+.modal-title {
+	text-align: center;
+	margin-top: 40px;
+}
+
+.addForm input[type="text"], [type="number"], [type="date"] {
+	width: 300px;
+	height: 40px;
+	font-size: 33px;
+	border-radius: 8px;
+	border: 1px solid #3498db;
+}
+
+.add-button-area {
+	width: 100%;
+	text-align: center;
+}
+
+.add-button {
+	padding: 30px 100px;
+    font-size: 33px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+}
+
+.add-button:hover {
+	background-color: #2980b9;
+}
+
+.null-form {
+	background-color: darkgray;
+	cursor: auto;
+}
+
+.null-form:hover {
+	background-color: darkgray;
 }
