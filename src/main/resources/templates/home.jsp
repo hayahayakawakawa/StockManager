@@ -2,8 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
+	<title>StockManager</title>
 	<link rel="stylesheet" href="/css/home.css">
+	<link rel="stylesheet" href="/css/modal.css">
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<script src="/js/main.js"></script>
 	<script src="/js/modal.js"></script>
@@ -14,17 +15,33 @@
 	<div class="main">
 		<div class="main-content">
 			<table>
-			<tr th:each="item : ${itemList}">
-				<td th:text="${item.name}"></td>
-				<td th:text="${item.category}"></td>
-				<td th:text="${item.pics}"></td>
-				<td th:text="${item.registDate}"></td>
-				<td th:text="${item.expirationDays}"></td>
-                <td><form action="/delete" method="post" id="delete">
-                	<input type="hidden" id="id" name="id" th:value="${item.id}" />
-                	<input type="image" src="/image/delete.png" />
-                </form></td>
-            </tr>
+			<div class="item-list" th:each="item : ${itemList}">
+				<div class="item-name">
+					<p th:text="${item.name}"></p>
+				</div>
+				<div class="item-category">
+					<p class="item-list-title">カテゴリー</p>
+					<p class="item-list-info" th:text="： + ${item.category}"></p>
+				</div>
+				<div class="item-pics">
+					<p class="item-list-title">数量</p>
+					<p class="item-list-info" th:text="： + ${item.pics}"></p>
+				</div>
+				<div class="item-registDate">
+					<p class="item-list-title">登録日</p>
+					<p class="item-list-info" th:text="： + ${item.registDate}"></p>
+				</div>
+				<div class="item-expirationDays">
+					<p class="item-list-title">消費日数</p>
+					<p class="item-list-info" th:text="： + ${item.expirationDays * item.pics}"></p>
+                </div>
+                <div class="item-delete">
+                	<form action="/delete" method="post" id="delete">
+                		<input type="hidden" id="id" name="id" th:value="${item.id}" />
+                		<input type="image" src="/image/delete.png" />
+                	</form>
+                </div>
+            </div>
             </table>
 		</div>
 	</div>

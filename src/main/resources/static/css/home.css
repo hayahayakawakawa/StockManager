@@ -1,39 +1,60 @@
-/* +ボタン */
-#openModal {
-    position: fixed;
-    bottom: 50px;
+p {
+	margin: 0;
+}
+
+.main {
+	background-color: #fffaf0;
+}
+
+.main-content {
+	margin: auto;
+}
+
+.item-list {
+	background-color: #fafafa;
+	position: relative;
+	width: 1000px;
+	margin: auto;
+	margin-top: 30px;
+	padding-left: 20px;
+	font-size: 20px;
+	border-radius: 20px;
+	box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.15);
+}
+
+.item-category {
+	display: flex;
+	padding-left: 20px;
+}
+
+.item-pics {
+	display: flex;
+	padding-left: 20px;
+}
+
+.item-registDate {
+	display: flex;
+	padding-left: 20px;
+}
+
+.item-expirationDays {
+	display: flex;
+	padding-left: 20px;
+}
+
+ .item-list-title {
+	 width: 150px;
+ }
+ 
+ .item-list-info {
+ }
+
+.item-name {
+	font-size: 33px;
+}
+
+.item-delete {
+	position: absolute;
+	bottom: 50px;
     right: 50px;
-    font-size: 60px;
-    width: 80px;
-    height: 80px;
-    border: none;
-    border-radius: 50%;
-    background-color: #3498db;
-    color: #fff;
-    cursor: pointer;
-}
-
-#openModal:hover {
-    background-color: #2980b9;
-}
-
-/* モーダル */
-#addModal {
-    display: none; /* 初期状態で非表示にする */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    height: 80%;
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-/* ✗ボタン */
-#closeModal {
-	position:absolute;
-	top: 10px;
-    right: 30px;
-    font-size: 60px;
-    cursor: pointer;
 }
