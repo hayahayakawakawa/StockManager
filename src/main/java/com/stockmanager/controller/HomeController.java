@@ -62,6 +62,28 @@ public class HomeController {
 		return "redirect:/home";
 	}
 	
+	// 編集モーダル保存ボタン
+	@PostMapping("/editForm")
+	public String editForm(@RequestParam("id") Long id,
+			@RequestParam("name") String name,
+			@RequestParam("category") String category,
+			@RequestParam("pics") int pics,
+			@RequestParam("registDate") LocalDate registDate,
+			@RequestParam("expirationDays") int expirationDays) {
+		
+		StockItem stockItem = new StockItem();
+		stockItem.setId(id);
+		stockItem.setName(name);
+	    stockItem.setCategory(category);
+	    stockItem.setPics(pics);
+	    stockItem.setRegistDate(registDate);
+	    stockItem.setExpirationDays(expirationDays);
+	    
+	    stockItemRepository.saveAndFlush(stockItem);
+		
+		return "redirect:/home";
+	}
+	
 	// 削除ボタン
 	@PostMapping("/delete")
 	public String delete(@RequestParam("id") Long id) {

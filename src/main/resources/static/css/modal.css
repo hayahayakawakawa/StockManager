@@ -3,7 +3,7 @@ input {
 }
 
 /* +ボタン */
-#openModal {
+#add-button {
     position: fixed;
     bottom: 50px;
     right: 50px;
@@ -18,12 +18,12 @@ input {
     z-index: 2;
 }
 
-#openModal:hover {
+#add-button:hover {
     background-color: #2980b9;
 }
 
 /* モーダル */
-#addModal {
+.modal {
     display: none; /* 初期状態で非表示にする */
     position: fixed;
     top: 50%;
@@ -38,7 +38,7 @@ input {
 }
 
 /* ✗ボタン */
-#closeModal {
+.close-button {
 	position:absolute;
 	top: 10px;
     right: 30px;
@@ -52,7 +52,7 @@ input {
 	margin-top: 40px;
 }
 
-.addForm input[type="text"], [type="number"], [type="date"] {
+.modal-form input[type="text"], [type="number"], [type="date"] {
 	width: 300px;
 	height: 40px;
 	font-size: 33px;
@@ -60,12 +60,12 @@ input {
 	border: 1px solid #3498db;
 }
 
-.add-button-area {
+.form-submit-area {
 	width: 100%;
 	text-align: center;
 }
 
-.add-button {
+.submit-button {
 	padding: 30px 100px;
     font-size: 33px;
     cursor: pointer;
@@ -75,7 +75,7 @@ input {
     border-radius: 8px;
 }
 
-.add-button:hover {
+.submit-button:hover {
 	background-color: #2980b9;
 }
 
